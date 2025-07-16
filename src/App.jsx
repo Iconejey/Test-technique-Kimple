@@ -1,7 +1,15 @@
 import './css/App.css';
 import Sidebar from './components/Sidebar';
+import { useKimpleAPI } from './hooks/useFetch';
 
 function App() {
+	// Fetch list of contests from Kimple API
+	const { data, loading, error } = useKimpleAPI('/contests/list');
+
+	// Console log the data when it's available
+	if (data) console.log('Fetched data:', data);
+	if (error) console.error('Error fetching data:', error);
+
 	return (
 		<>
 			<Sidebar />
