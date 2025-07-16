@@ -1,0 +1,41 @@
+// Remove default margin and padding
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+// General app styles
+html,
+body {
+	// Theme
+	--white-1: #ffffff;
+	--white-2: #f7f7f7;
+	--accent: #5050d1;
+	--accent-dark: #22223e;
+	--accent-dark-2: #282852;
+	--accent-dark-3: #161532;
+	--accent-light: #dcdcf0;
+	--gray: #525269;
+	--gray-bg: #dcdce0;
+	--green: #76a771;
+	--green-bg: #e2eae2;
+	--yellow: #d39e4a;
+	--yellow-bg: #fdf4e3;
+	--blue: #628ccd;
+	--blue-bg: #dee6f1;
+	--red: #9d4037;
+	--red-bg: #e6d7d6;
+	background-color: var(--white-2);
+
+	// Sizes
+	--sidebar-width: 220px;
+	--header-height: 3.5rem;
+
+	min-height: 100%;
+	font-family: 'Segoe UI', sans-serif;
+}
+
+.icon {
+	font-family: 'Material Symbols Outlined';
+}

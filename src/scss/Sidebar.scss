@@ -1,0 +1,75 @@
+.sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: var(--sidebar-width);
+	height: 100vh;
+	background-color: var(--accent-dark);
+	color: var(--white-1);
+	border-right: 1px solid var(--accent-dark-3);
+	transition: transform 0.3s ease-in-out;
+	padding: 1rem;
+	padding-top: 0;
+	box-sizing: border-box;
+	z-index: 1000;
+	transform: translateX(0);
+
+	&.hidden {
+		transform: translateX(-100%);
+	}
+
+	&:not(.hidden) {
+		.open-sidebar {
+			opacity: 0 !important;
+			pointer-events: none;
+		}
+
+		& ~ .main-container {
+			margin-left: var(--sidebar-width);
+		}
+	}
+
+	.sidebar-header {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: var(--header-height);
+
+		img {
+			height: 40%;
+		}
+
+		.sidebar-btn {
+			position: absolute;
+			background: none;
+			border: none;
+			cursor: pointer;
+			width: 2rem;
+			height: 2rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 1.2rem;
+			border-radius: 0.4rem;
+			user-select: none;
+			font-family: 'Material Symbols Outlined';
+			transition: opacity 0.2s ease;
+			opacity: 1;
+
+			&:not(:hover) {
+				opacity: 0.3;
+			}
+		}
+
+		.close-sidebar {
+			right: 1rem;
+			color: var(--white-1);
+		}
+
+		.open-sidebar {
+			right: -1rem;
+			transform: translateX(100%);
+			color: var(--accent-dark);
+		}
+	}
+}
