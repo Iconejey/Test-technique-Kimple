@@ -13,6 +13,9 @@
 	box-sizing: border-box;
 	z-index: 1000;
 	transform: translateX(0);
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
 
 	&.hidden {
 		transform: translateX(-100%);
@@ -71,6 +74,26 @@
 			transform: translateX(100%);
 			color: var(--accent-dark);
 		}
+	}
+
+	.group {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	h2 {
+		font-size: 0.8rem;
+		opacity: 0.3;
+		font-weight: 100;
+		letter-spacing: 0.3em;
+		margin-bottom: 0.5rem;
+	}
+
+	.copyright {
+		margin-top: auto;
+		font-size: 0.7rem;
+		opacity: 0.3;
 	}
 }
 

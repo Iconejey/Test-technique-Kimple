@@ -1,0 +1,12 @@
+import '../css/IconButton.css';
+
+function IconButton({ icon, children: label, onClick, className = '', selected }) {
+	return (
+		<button className={`icon-button ${className} ${selected ? 'selected' : ''}`} onClick={onClick}>
+			<span className="icon">{icon}</span>
+			<span className="label">{label}</span>
+		</button>
+	);
+}
+
+export default IconButton;
