@@ -7,7 +7,7 @@
 	background-color: var(--accent-dark);
 	color: var(--white-1);
 	border-right: 1px solid var(--accent-dark-3);
-	transition: transform 0.3s ease-in-out;
+	transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 	padding: 1rem;
 	padding-top: 0;
 	box-sizing: border-box;
@@ -71,5 +71,16 @@
 			transform: translateX(100%);
 			color: var(--accent-dark);
 		}
+	}
+}
+
+// Prevent main margin left on small screens
+@media (max-width: 768px) {
+	.sidebar:not(.hidden) {
+		box-shadow: var(--shadow-dark);
+	}
+
+	.main-container {
+		margin-left: 0 !important;
 	}
 }

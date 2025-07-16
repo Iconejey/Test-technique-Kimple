@@ -4,7 +4,7 @@ header {
 	left: 0;
 	right: 0;
 	background-color: var(--white-1);
-	box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+	box-shadow: var(--shadow-light);
 	padding-right: 2rem;
 	height: var(--header-height);
 	display: flex;

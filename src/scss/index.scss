@@ -26,14 +26,18 @@ body {
 	--blue-bg: #dee6f1;
 	--red: #9d4037;
 	--red-bg: #e6d7d6;
-	background-color: var(--white-2);
 
 	// Sizes
 	--sidebar-width: 220px;
 	--header-height: 3.5rem;
 
+	// Shadows
+	--shadow-light: 0 0 0.25rem rgba(0, 0, 0, 0.1);
+	--shadow-dark: 0 0 1rem rgba(0, 0, 0, 0.5);
+
 	min-height: 100%;
 	font-family: 'Segoe UI', sans-serif;
+	background-color: var(--white-2);
 }
 
 .icon {
