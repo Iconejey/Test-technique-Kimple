@@ -1,5 +1,6 @@
 import './css/App.css';
 import Sidebar from './components/Sidebar';
+import IconButton from './components/IconButton';
 import { useKimpleAPI } from './hooks/useFetch';
 
 function App() {
@@ -25,6 +26,10 @@ function App() {
 						<p>Créez, gérez vos opérations Kimple, analysez les statistiques et effectuez des exports de vos opérations.</p>
 						<a href="/">Besoin d'aide ?</a>
 					</div>
+
+					<IconButton icon="add_circle" className="primary create-operation" onClick={() => alert('Créer une opération')}>
+						Créer une opération
+					</IconButton>
 				</main>
 			</div>
 
