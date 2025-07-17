@@ -1,0 +1,47 @@
+.counters {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 2rem;
+}
+
+.counter {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 0.5rem;
+
+	&-color {
+		background-color: var(--color);
+		width: 0.6rem;
+		height: 0.6rem;
+		border-radius: 50%;
+		flex-shrink: 0;
+	}
+
+	button {
+		cursor: pointer;
+		padding: 0.3rem 1.1rem;
+		border-radius: 0.25rem;
+		border: 1px solid var(--gray);
+		color: var(--gray);
+		opacity: 0.6;
+	}
+
+	&.selected {
+		color: var(--color);
+		font-weight: bold;
+	}
+
+	&.selected,
+	&:hover,
+	&:focus {
+		button {
+			background-color: var(--bg);
+			color: var(--color);
+			border-color: var(--color);
+			opacity: 1;
+			font-weight: bold;
+		}
+	}
+}

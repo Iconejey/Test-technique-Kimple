@@ -1,11 +1,16 @@
 import './css/App.css';
 import Sidebar from './components/Sidebar';
 import IconButton from './components/IconButton';
+import Counter from './components/Counter';
 import { useKimpleAPI } from './hooks/useFetch';
+import { useState } from 'react';
 
 function App() {
 	// Fetch list of contests from Kimple API
 	const { data, loading, error } = useKimpleAPI('/contests/list');
+
+	// State to manage selected counter
+	const [selected_counter, setSelectedCounter] = useState('all');
 
 	// Console log the data when it's available
 	if (data) console.log('Fetched data:', data);
@@ -30,6 +35,26 @@ function App() {
 					<IconButton icon="add_circle" className="primary create-operation" onClick={() => alert('Créer une opération')}>
 						Créer une opération
 					</IconButton>
+
+					<div className="counters-search-container">
+						<div className="counters">
+							<Counter count={data?.contest_counters.total_count} selected={selected_counter === 'all'} onClick={() => setSelectedCounter('all')}>
+								Tous
+							</Counter>
+							<Counter color="green" count={data?.contest_counters.total_published} selected={selected_counter === 'published'} onClick={() => setSelectedCounter('published')}>
+								En ligne
+							</Counter>
+							<Counter color="yellow" count={data?.contest_counters.total_launching} selected={selected_counter === 'launching'} onClick={() => setSelectedCounter('launching')}>
+								Débute
+							</Counter>
+							<Counter color="gray" count={data?.contest_counters.total_draft} selected={selected_counter === 'draft'} onClick={() => setSelectedCounter('draft')}>
+								Brouillon
+							</Counter>
+							<Counter color="blue" count={data?.contest_counters.total_ended} selected={selected_counter === 'ended'} onClick={() => setSelectedCounter('ended')}>
+								Terminé
+							</Counter>
+						</div>
+					</div>
 				</main>
 			</div>
 
