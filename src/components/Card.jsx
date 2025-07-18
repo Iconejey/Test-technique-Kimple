@@ -26,7 +26,7 @@ function Card({ hash_id }) {
 	const locale_country_name = LOCAL_COUNTRY_NAMES[contest?.data?.locale];
 
 	return (
-		<div className="card">
+		<div className={`card ${loading ? 'loading' : ''} ${error ? 'error' : ''}`}>
 			<img className="card-bg" src={bg_img_src} />
 			<div className="card-content">
 				<img className="card-template" src={template_icon_img_src} />
@@ -46,6 +46,12 @@ function Card({ hash_id }) {
 					<IconLabel icon="schedule" label="UTC+2" />
 					<IconLabel icon="language" label={locale_country_name} />
 				</div>
+			</div>
+
+			<div className="loading-cover"></div>
+			<div className="error-cover">
+				<span className="icon">error</span>
+				<span>Impossible de charger les données.</span>
 			</div>
 		</div>
 	);
