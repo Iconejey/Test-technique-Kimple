@@ -8,7 +8,7 @@ const Sidebar = () => {
 	const toggleSidebar = () => setIsHidden(!is_hidden);
 
 	// State to manage selected view
-	const [selectedView, setSelectedView] = useState('operations');
+	const [selected_view, setSelectedView] = useState('operations');
 
 	return (
 		<aside className={`sidebar ${is_hidden ? 'hidden' : ''}`}>
@@ -25,47 +25,29 @@ const Sidebar = () => {
 			</div>
 
 			<div className="group">
-				<IconButton icon="add_circle" className="primary">
-					Créer une opération
-				</IconButton>
+				<IconButton icon="add_circle" label="Créer une opération" className="primary" />
 			</div>
 
 			<div className="group">
-				<IconButton icon="dashboard" selected={selectedView === 'dashboard'} onClick={() => setSelectedView('dashboard')}>
-					Tableau de bord
-				</IconButton>
+				<IconButton icon="dashboard" label="Tableau de bord" selected={selected_view === 'dashboard'} onClick={() => setSelectedView('dashboard')} />
 
-				<IconButton icon="book_ribbon" selected={selectedView === 'library'} onClick={() => setSelectedView('library')}>
-					Bibliothèque
-				</IconButton>
+				<IconButton icon="book_ribbon" label="Bibliothèque" selected={selected_view === 'library'} onClick={() => setSelectedView('library')} />
 			</div>
 
 			<div className="group">
 				<h2>PROJETS</h2>
 
-				<IconButton icon="stacks" selected={selectedView === 'operations'} onClick={() => setSelectedView('operations')}>
-					Opérations
-				</IconButton>
-				<IconButton icon="computer" selected={selectedView === 'mini-sites'} onClick={() => setSelectedView('mini-sites')}>
-					Mini-sites
-				</IconButton>
-				<IconButton icon="mail" selected={selectedView === 'campaigns'} onClick={() => setSelectedView('campaigns')}>
-					Campagnes
-				</IconButton>
+				<IconButton icon="stacks" label="Opérations" selected={selected_view === 'operations'} onClick={() => setSelectedView('operations')} />
+				<IconButton icon="computer" label="Mini-sites" selected={selected_view === 'mini-sites'} onClick={() => setSelectedView('mini-sites')} />
+				<IconButton icon="mail" label="Campagnes" selected={selected_view === 'campaigns'} onClick={() => setSelectedView('campaigns')} />
 			</div>
 
 			<div className="group">
 				<h2>RESSOURCES</h2>
 
-				<IconButton icon="lightbulb" selected={selectedView === 'inspiration'} onClick={() => setSelectedView('inspiration')}>
-					Centre d'inspiration
-				</IconButton>
-				<IconButton icon="circle_notifications" selected={selectedView === 'blog'} onClick={() => setSelectedView('blog')}>
-					Le blog Kimple
-				</IconButton>
-				<IconButton icon="help" selected={selectedView === 'help'} onClick={() => setSelectedView('help')}>
-					Centre d'aide
-				</IconButton>
+				<IconButton icon="lightbulb" label="Centre d'inspiration" selected={selected_view === 'inspiration'} onClick={() => setSelectedView('inspiration')} />
+				<IconButton icon="circle_notifications" label="Le blog Kimple" selected={selected_view === 'blog'} onClick={() => setSelectedView('blog')} />
+				<IconButton icon="help" label="Centre d'aide" selected={selected_view === 'help'} onClick={() => setSelectedView('help')} />
 			</div>
 
 			<div className="copyright">

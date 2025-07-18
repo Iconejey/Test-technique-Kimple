@@ -1,6 +1,6 @@
 import '../scss/IconLabel.scss';
 
-function IconLabel({ icon, children: label, color }) {
+function IconLabel({ icon, label, color }) {
 	const styles = { '--color': `var(--${color})`, '--bg': `var(--${color}-bg)` };
 
 	return (

@@ -1,6 +1,6 @@
 import '../scss/Counter.scss';
 
-function Counter({ color, count, selected, children: label, onClick }) {
+function Counter({ color, count, selected, label, onClick }) {
 	// Use color if provided, otherwise default to accent colors
 	const styles = { '--color': `var(--${color}, var(--accent))`, '--bg': `var(--${color}-bg, var(--accent-light))` };
 

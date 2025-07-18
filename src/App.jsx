@@ -33,27 +33,15 @@ function App() {
 						<a href="/">Besoin d'aide ?</a>
 					</div>
 
-					<IconButton icon="add_circle" className="primary create-operation" onClick={() => alert('Créer une opération')}>
-						Créer une opération
-					</IconButton>
+					<IconButton icon="add_circle" label="Créer une opération" className="primary create-operation" onClick={() => alert('Créer une opération')} />
 
 					<div className="counters-search-container">
 						<div className="counters">
-							<Counter count={contests?.contest_counters.total_count} selected={selected_counter === 'all'} onClick={() => setSelectedCounter('all')}>
-								Tous
-							</Counter>
-							<Counter color="green" count={contests?.contest_counters.total_published} selected={selected_counter === 'published'} onClick={() => setSelectedCounter('published')}>
-								En ligne
-							</Counter>
-							<Counter color="yellow" count={contests?.contest_counters.total_launching} selected={selected_counter === 'launching'} onClick={() => setSelectedCounter('launching')}>
-								Débute
-							</Counter>
-							<Counter color="gray" count={contests?.contest_counters.total_draft} selected={selected_counter === 'draft'} onClick={() => setSelectedCounter('draft')}>
-								Brouillon
-							</Counter>
-							<Counter color="blue" count={contests?.contest_counters.total_ended} selected={selected_counter === 'ended'} onClick={() => setSelectedCounter('ended')}>
-								Terminé
-							</Counter>
+							<Counter label="Tous" count={contests?.contest_counters.total_count} selected={selected_counter === 'all'} onClick={() => setSelectedCounter('all')} />
+							<Counter label="En ligne" color="green" count={contests?.contest_counters.total_published} selected={selected_counter === 'published'} onClick={() => setSelectedCounter('published')} />
+							<Counter label="Débute" color="yellow" count={contests?.contest_counters.total_launching} selected={selected_counter === 'launching'} onClick={() => setSelectedCounter('launching')} />
+							<Counter label="Brouillon" color="gray" count={contests?.contest_counters.total_draft} selected={selected_counter === 'draft'} onClick={() => setSelectedCounter('draft')} />
+							<Counter label="Terminé" color="blue" count={contests?.contest_counters.total_ended} selected={selected_counter === 'ended'} onClick={() => setSelectedCounter('ended')} />
 						</div>
 					</div>
 

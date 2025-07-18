@@ -37,16 +37,14 @@ function Card({ hash_id }) {
 				</div>
 
 				<div className="card-group">
-					<IconLabel icon="rocket_launch">{start_date}</IconLabel>
-					<IconLabel icon="flag">{finish_date}</IconLabel>
+					<IconLabel icon="rocket_launch" label={start_date} />
+					<IconLabel icon="flag" label={finish_date} />
 				</div>
 
 				<div className="card-group">
-					<IconLabel icon={state_icon} color={state_color}>
-						{state_label}
-					</IconLabel>
-					<IconLabel icon="schedule">UTC+2</IconLabel>
-					<IconLabel icon="language">{locale_country_name}</IconLabel>
+					<IconLabel icon={state_icon} label={state_label} color={state_color} />
+					<IconLabel icon="schedule" label="UTC+2" />
+					<IconLabel icon="language" label={locale_country_name} />
 				</div>
 			</div>
 		</div>
