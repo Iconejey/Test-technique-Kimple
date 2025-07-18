@@ -10,13 +10,13 @@
 	}
 
 	&.colored {
-		background-color: var(--bg);
-		border: 1px solid var(--color);
+		background-color: var(--bg, var(--accent-light));
+		border: 1px solid var(--color, var(--accent));
 		border-radius: 0.25rem;
 		padding: 0.25rem 0.75rem;
 
 		.icon {
-			color: var(--color);
+			color: var(--color, var(--accent));
 		}
 	}
 }

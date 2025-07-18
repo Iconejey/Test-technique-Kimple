@@ -1,8 +1,8 @@
 import '../scss/Counter.scss';
 
 function Counter({ color, count, selected, label, onClick }) {
-	// Use color if provided, otherwise default to accent colors
-	const styles = { '--color': `var(--${color}, var(--accent))`, '--bg': `var(--${color}-bg, var(--accent-light))` };
+	// Set color CSS variables when color is provided
+	const styles = { '--color': `var(--${color})`, '--bg': `var(--${color}-bg)` };
 
 	return (
 		<div className={`counter ${selected ? 'selected' : ''}`} style={styles}>

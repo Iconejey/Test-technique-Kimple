@@ -1,6 +1,7 @@
 import '../scss/IconLabel.scss';
 
 function IconLabel({ icon, label, color }) {
+	// Set color CSS variables when color is provided
 	const styles = { '--color': `var(--${color})`, '--bg': `var(--${color}-bg)` };
 
 	return (
