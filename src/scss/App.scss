@@ -65,6 +65,15 @@ header {
 			align-self: flex-end;
 		}
 
+		.counters-search-container {
+			.counters {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 2rem;
+			}
+		}
+
 		.cards {
 			display: flex;
 			flex-wrap: wrap;
