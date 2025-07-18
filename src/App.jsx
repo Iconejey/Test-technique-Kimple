@@ -13,7 +13,7 @@ function App() {
 	const [selected_counter, setSelectedCounter] = useState('all');
 
 	// Console log the data when it's available
-	if (data) console.log('Fetched data:', data);
+	if (contests) console.log('Fetched data:', contests);
 	if (error) console.error('Error fetching data:', error);
 
 	return (
@@ -38,19 +38,19 @@ function App() {
 
 					<div className="counters-search-container">
 						<div className="counters">
-							<Counter count={data?.contest_counters.total_count} selected={selected_counter === 'all'} onClick={() => setSelectedCounter('all')}>
+							<Counter count={contests?.contest_counters.total_count} selected={selected_counter === 'all'} onClick={() => setSelectedCounter('all')}>
 								Tous
 							</Counter>
-							<Counter color="green" count={data?.contest_counters.total_published} selected={selected_counter === 'published'} onClick={() => setSelectedCounter('published')}>
+							<Counter color="green" count={contests?.contest_counters.total_published} selected={selected_counter === 'published'} onClick={() => setSelectedCounter('published')}>
 								En ligne
 							</Counter>
-							<Counter color="yellow" count={data?.contest_counters.total_launching} selected={selected_counter === 'launching'} onClick={() => setSelectedCounter('launching')}>
+							<Counter color="yellow" count={contests?.contest_counters.total_launching} selected={selected_counter === 'launching'} onClick={() => setSelectedCounter('launching')}>
 								Débute
 							</Counter>
-							<Counter color="gray" count={data?.contest_counters.total_draft} selected={selected_counter === 'draft'} onClick={() => setSelectedCounter('draft')}>
+							<Counter color="gray" count={contests?.contest_counters.total_draft} selected={selected_counter === 'draft'} onClick={() => setSelectedCounter('draft')}>
 								Brouillon
 							</Counter>
-							<Counter color="blue" count={data?.contest_counters.total_ended} selected={selected_counter === 'ended'} onClick={() => setSelectedCounter('ended')}>
+							<Counter color="blue" count={contests?.contest_counters.total_ended} selected={selected_counter === 'ended'} onClick={() => setSelectedCounter('ended')}>
 								Terminé
 							</Counter>
 						</div>
