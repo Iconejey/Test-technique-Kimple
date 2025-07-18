@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 function App() {
 	// Fetch list of contests from Kimple API
-	const { data, loading, error } = useKimpleAPI('/contests/list');
+	const { data: contests, loading, error } = useKimpleAPI('/contests/list?order=start_at%20desc');
 
 	// State to manage selected counter
 	const [selected_counter, setSelectedCounter] = useState('all');
