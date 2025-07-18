@@ -57,6 +57,47 @@ export const TEMPLATES = {
 	TEMPLATE_CUP_SHUFFLER: 53
 };
 
+export const TEMPLATES_ICONS = {
+	[TEMPLATES.TEMPLATE_CONTEST]: 'icon-contestGame.png',
+	[TEMPLATES.TEMPLATE_TAQUIN]: 'icon-switch.png',
+	[TEMPLATES.TEMPLATE_MEMORY]: 'icon-memory.png',
+	[TEMPLATES.TEMPLATE_CUTCUT]: 'icon-cutcut.png',
+	[TEMPLATES.TEMPLATE_QUIZ]: 'icon-quizz.png',
+	[TEMPLATES.TEMPLATE_SCRATCH]: 'icon-scratch.png',
+	[TEMPLATES.TEMPLATE_WHACK_A_MOLE]: 'icon-whackAMole.png',
+	[TEMPLATES.TEMPLATE_DIFFERENCE]: 'icon-differenceGame.png',
+	[TEMPLATES.TEMPLATE_2048]: 'icon-2048.png',
+	[TEMPLATES.TEMPLATE_PUZZLE]: 'icon-puzzle.png',
+	[TEMPLATES.TEMPLATE_DOODLE_JUMP]: 'icon-jumpJump.png',
+	[TEMPLATES.TEMPLATE_BASKET]: 'icon-panier.png',
+	[TEMPLATES.TEMPLATE_FLAPPY]: 'icon-flapFlap.png',
+	[TEMPLATES.TEMPLATE_MATCH3]: 'icon-match3.png',
+	[TEMPLATES.TEMPLATE_BREAKOUT]: 'icon-brickBrealker.png',
+	[TEMPLATES.TEMPLATE_PERSONALITY_TEST]: 'icon-personalityTest.png',
+	[TEMPLATES.TEMPLATE_CONTEST_PHOTO]: 'icon-concoursPhoto.png',
+	[TEMPLATES.TEMPLATE_INSTANT_WIN]: 'icon-instantWin.png',
+	[TEMPLATES.TEMPLATE_JACKPOT]: 'icon-jackpot.png',
+	[TEMPLATES.TEMPLATE_RIGHT_PRICE]: 'icon-justePrix.png',
+	[TEMPLATES.TEMPLATE_LANDING_PAGE]: 'icon-landingPage.png',
+	[TEMPLATES.TEMPLATE_CALENDAR_WIN]: 'icon-winnerCalendar.png',
+	[TEMPLATES.TEMPLATE_SONDAGE]: 'icon-survey.png',
+	[TEMPLATES.TEMPLATE_WHEEL_OF_FORTUNE]: 'icon-wheelOfFortune.png',
+	[TEMPLATES.TEMPLATE_BATTLE]: 'icon-battle.png',
+	[TEMPLATES.TEMPLATE_PRODUCT_DESIGNER]: 'icon-productDesigner.png',
+	[TEMPLATES.TEMPLATE_QUIZ_WINNER]: 'icon-winnerQuiz.png',
+	[TEMPLATES.TEMPLATE_INSTANT_WIN_ANIMATION]: 'icon-gifWin.png',
+	[TEMPLATES.TEMPLATE_SPACE_INVADERS]: 'icon-spaceSmash.png',
+	[TEMPLATES.TEMPLATE_PENALTY]: 'icon-penalty.png',
+	[TEMPLATES.TEMPLATE_HIDDEN_OBJECT]: 'icon-objectHide.png',
+	[TEMPLATES.TEMPLATE_CARD_FLIP]: 'icon-cardFlip.png',
+	[TEMPLATES.TEMPLATE_WINNING_DICE]: 'icon-winnerDice.png',
+	[TEMPLATES.TEMPLATE_PINATA]: 'icon-pinata.png',
+	[TEMPLATES.TEMPLATE_CASTING]: 'icon-casting.png',
+	[TEMPLATES.TEMPLATE_PROGNOSTIC]: 'icon-pronosticGame.png',
+	[TEMPLATES.TEMPLATE_RUNNER]: 'icon-runner.png',
+	[TEMPLATES.TEMPLATE_CUP_SHUFFLER]: 'icon-fastCup.png'
+};
+
 export const STATES = {
 	STATE_PUBLISHED: 1,
 	STATE_WAITING: 2,
@@ -76,4 +117,73 @@ export const STATES = {
 	STATE_PLANNING_PUBLICATION: 16,
 	STATE_PLANNING_CLOSING: 17,
 	STATE_TEST: 18
+};
+
+export const STATE_ICONS = {
+	[STATES.STATE_PUBLISHED]: 'rocket_launch',
+	[STATES.STATE_WAITING]: 'description',
+	[STATES.STATE_FINISHED]: 'flag',
+	[STATES.STATE_WAITING_PUBLISHED]: 'flag',
+	[STATES.STATE_LAUNCHING_PUBLICATION]: 'rocket_launch',
+	[STATES.STATE_IN_PROGRESS_PUBLICATION]: 'flag',
+	[STATES.STATE_LAUNCHING_RESET]: 'refresh',
+	[STATES.STATE_IN_PROGRESS_RESET]: 'flag',
+	[STATES.STATE_WAITING_CLOSING]: 'flag',
+	[STATES.STATE_LAUNCHING_CLOSING]: 'flag',
+	[STATES.STATE_IN_PROGRESS_CLOSING]: 'flag',
+	[STATES.STATE_LAUNCHING_RELAUNCH]: 'refresh',
+	[STATES.STATE_IN_PROGRESS_RELAUNCH]: 'flag',
+	[STATES.STATE_ARCHIVED]: 'archive',
+	[STATES.STATE_MAINTENANCE]: 'build',
+	[STATES.STATE_PLANNING_PUBLICATION]: 'calendar_today',
+	[STATES.STATE_PLANNING_CLOSING]: 'calendar_today',
+	[STATES.STATE_TEST]: 'pending'
+};
+
+export const STATE_COLORS = {
+	[STATES.STATE_PUBLISHED]: 'green',
+	[STATES.STATE_WAITING]: 'gray',
+	[STATES.STATE_FINISHED]: 'blue',
+	[STATES.STATE_WAITING_PUBLISHED]: 'yellow',
+	[STATES.STATE_LAUNCHING_PUBLICATION]: 'yellow',
+	[STATES.STATE_IN_PROGRESS_PUBLICATION]: 'yellow',
+	[STATES.STATE_LAUNCHING_RESET]: 'yellow',
+	[STATES.STATE_IN_PROGRESS_RESET]: 'yellow',
+	[STATES.STATE_WAITING_CLOSING]: 'blue',
+	[STATES.STATE_LAUNCHING_CLOSING]: 'blue',
+	[STATES.STATE_IN_PROGRESS_CLOSING]: 'blue',
+	[STATES.STATE_LAUNCHING_RELAUNCH]: 'yellow',
+	[STATES.STATE_IN_PROGRESS_RELAUNCH]: 'yellow',
+	[STATES.STATE_ARCHIVED]: 'grey',
+	[STATES.STATE_MAINTENANCE]: 'orange',
+	[STATES.STATE_PLANNING_PUBLICATION]: 'purple',
+	[STATES.STATE_PLANNING_CLOSING]: 'blue',
+	[STATES.STATE_TEST]: 'red'
+};
+
+export const STATE_LABELS = {
+	[STATES.STATE_PUBLISHED]: 'En ligne',
+	[STATES.STATE_WAITING]: 'Brouillon',
+	[STATES.STATE_FINISHED]: 'Terminé',
+	[STATES.STATE_WAITING_PUBLISHED]: 'En attente de publication',
+	[STATES.STATE_LAUNCHING_PUBLICATION]: 'Lancement de la publication',
+	[STATES.STATE_IN_PROGRESS_PUBLICATION]: 'Publication en cours',
+	[STATES.STATE_LAUNCHING_RESET]: 'Lancement de la réinitialisation',
+	[STATES.STATE_IN_PROGRESS_RESET]: 'Réinitialisation en cours',
+	[STATES.STATE_WAITING_CLOSING]: 'Cloturée',
+	[STATES.STATE_LAUNCHING_CLOSING]: 'Cloturée',
+	[STATES.STATE_IN_PROGRESS_CLOSING]: 'Cloturée',
+	[STATES.STATE_LAUNCHING_RELAUNCH]: 'Lancement de la relance',
+	[STATES.STATE_IN_PROGRESS_RELAUNCH]: 'Relance en cours',
+	[STATES.STATE_ARCHIVED]: 'Archivé',
+	[STATES.STATE_MAINTENANCE]: 'Maintenance',
+	[STATES.STATE_PLANNING_PUBLICATION]: 'Planification de la publication',
+	[STATES.STATE_PLANNING_CLOSING]: 'Cloturée',
+	[STATES.STATE_TEST]: 'En test'
+};
+
+export const LOCAL_COUNTRY_NAMES = {
+	fr: 'Français',
+	en: 'English',
+	es: 'Español'
 };

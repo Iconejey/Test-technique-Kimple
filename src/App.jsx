@@ -2,6 +2,7 @@ import './css/App.css';
 import Sidebar from './components/Sidebar';
 import IconButton from './components/IconButton';
 import Counter from './components/Counter';
+import Card from './components/Card';
 import { useKimpleAPI } from './hooks/useFetch';
 import { useState } from 'react';
 
@@ -54,6 +55,14 @@ function App() {
 								Terminé
 							</Counter>
 						</div>
+					</div>
+
+					<div className="cards">
+						{loading && !error && <p>Chargement des opérations...</p>}
+						{error && <p className="contests-api-error">Erreur lors du chargement des opérations.</p>}
+						{contests?.data.map(contest => (
+							<Card hash_id={contest.hash_id} />
+						))}
 					</div>
 				</main>
 			</div>

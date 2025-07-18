@@ -16,6 +16,7 @@ body {
 	--accent-dark-2: #282852;
 	--accent-dark-3: #161532;
 	--accent-light: #dcdcf0;
+	--light-gray: #9292a5;
 	--gray: #525269;
 	--gray-bg: #dcdce0;
 	--green: #76a771;
@@ -42,4 +43,5 @@ body {
 
 .icon {
 	font-family: 'Material Symbols Outlined';
+	user-select: none;
 }
