@@ -64,6 +64,12 @@ header {
 		button.create-operation {
 			align-self: flex-end;
 		}
+
+		.cards {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 1.5rem;
+		}
 	}
 }
 
