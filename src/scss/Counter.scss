@@ -23,9 +23,9 @@
 		cursor: pointer;
 		padding: 0.3rem 1.1rem;
 		border-radius: 0.25rem;
-		border: 1px solid var(--gray);
-		color: var(--gray);
-		opacity: 0.6;
+		border: 1px solid var(--light-gray);
+		color: var(--light-gray);
+		background: none;
 	}
 
 	&.selected {
@@ -40,7 +40,6 @@
 			background-color: var(--bg);
 			color: var(--color);
 			border-color: var(--color);
-			opacity: 1;
 			font-weight: bold;
 		}
 	}
