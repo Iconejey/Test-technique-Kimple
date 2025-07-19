@@ -67,6 +67,7 @@ function App() {
 						{loading && !error && <p>Chargement des opérations...</p>}
 						{error && <p className="contests-api-error">Erreur lors du chargement des opérations.</p>}
 						{!loading && !error && contests?.data.map(contest => <Card hash_id={contest.hash_id} />)}
+						{!loading && !error && contests?.data.length === 0 && <p>Aucune opération trouvée.</p>}
 					</div>
 				</main>
 			</div>
