@@ -8,10 +8,7 @@ export function useDebounce(initial_value, delay) {
 	// Trigger the effect when value changes
 	useEffect(() => {
 		// Set a timeout to update the debounced value after the delay
-		const handler = setTimeout(() => {
-			console.log(`Debounced value updated to: ${value}`); // Debugging log
-			setDebouncedValue(value);
-		}, delay);
+		const handler = setTimeout(() => setDebouncedValue(value), delay);
 
 		// Cleanup function to clear the timeout if the component unmounts or value changes
 		return () => clearTimeout(handler);
