@@ -66,11 +66,43 @@ header {
 		}
 
 		.counters-search-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			align-self: stretch;
+			gap: 2rem;
+			flex-wrap: wrap-reverse;
+			margin-bottom: -0.5rem;
+
 			.counters {
 				display: flex;
 				flex-wrap: wrap;
 				justify-content: center;
-				gap: 2rem;
+				gap: 1rem;
+			}
+
+			.search {
+				display: flex;
+				align-items: center;
+				gap: 1rem;
+
+				input {
+					background: none;
+					border: none;
+					color: inherit;
+					outline: none;
+					width: 18rem;
+
+					// Make the placeholder text gray
+					&::placeholder {
+						color: inherit;
+						opacity: 0.3;
+					}
+				}
+
+				.icon {
+					font-size: 1.2rem;
+				}
 			}
 		}
 

@@ -4,15 +4,19 @@ import IconButton from './components/IconButton';
 import Counter from './components/Counter';
 import Card from './components/Card';
 import { useContestsList } from './hooks/useFetch';
+import { useDebounce } from './hooks/useDebounce';
 import { useState } from 'react';
 import { STATES } from '../constants';
 
 function App() {
+	// State to manage search input
+	const [search, setSearch] = useDebounce('', 500);
+
 	// State to manage selected counter
 	const [selected_counter, setSelectedCounter] = useState('');
 
 	// Fetch list of contests from Kimple API
-	const { data: contests, loading, error } = useContestsList(selected_counter);
+	const { data: contests, loading, error } = useContestsList(selected_counter, search);
 
 	return (
 		<>
@@ -51,6 +55,11 @@ function App() {
 								selected={selected_counter === STATES.STATE_WAITING_CLOSING}
 								onClick={() => setSelectedCounter(STATES.STATE_WAITING_CLOSING)}
 							/>
+						</div>
+
+						<div className="search">
+							<span className="icon">search</span>
+							<input type="text" placeholder="Nom d'une opération" onChange={e => setSearch(e.target.value)} />
 						</div>
 					</div>
 

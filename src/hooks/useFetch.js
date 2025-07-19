@@ -93,15 +93,15 @@ export function useKimpleAPI(endpoint, options = {}) {
 }
 
 // Custom hook to fetch the list of contests
-export function useContestsList(state) {
+export function useContestsList(state, name) {
 	// Default URL parameters
-	const url_params = { order: 'start_at desc' };
+	const url_params = { order: 'start_at desc', limit: 12 };
 
-	// Construct the search parameter
-	const search_params = [];
-	if (state) search_params.push(`state='${state}'`);
-	const search_query = search_params.join('&&');
-	if (search_query) url_params.search = search_query;
+	// State filter
+	if (state) url_params.search = `state='${state}'`;
+
+	// Name search
+	if (name) url_params.search_by_name = name;
 
 	const query_string = new URLSearchParams(url_params).toString();
 	const endpoint = `/contests/list?${query_string}`;
