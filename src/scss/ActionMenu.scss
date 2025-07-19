@@ -28,15 +28,11 @@
 	}
 
 	button {
-		background: none;
-		border: none;
 		color: var(--accent-dark);
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
-		cursor: pointer;
 		text-wrap: nowrap;
-		outline: none;
 
 		.icon {
 			font-size: 1.2rem;
