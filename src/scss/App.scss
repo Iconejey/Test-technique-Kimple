@@ -110,6 +110,11 @@ header {
 			display: flex;
 			flex-wrap: wrap;
 			gap: 1.5rem;
+
+			.contests-api-error {
+				color: var(--red);
+				margin-top: 1rem;
+			}
 		}
 	}
 }
