@@ -11,6 +11,7 @@
 	flex-direction: column;
 	min-width: 290px;
 	max-width: 400px;
+	outline: none;
 
 	.card-bg {
 		width: 100%;
@@ -51,7 +52,7 @@
 		}
 	}
 
-	&:not(:hover, .menu-active) .card-menu {
+	&:not(:hover, :focus, .menu-active) .card-menu {
 		opacity: 0;
 		pointer-events: none;
 	}
@@ -114,7 +115,10 @@
 		}
 	}
 
-	&.menu-active .card-content {
-		background-color: var(--white-3);
+	&.menu-active,
+	&:focus {
+		.card-content {
+			background-color: var(--white-3);
+		}
 	}
 }

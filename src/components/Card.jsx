@@ -55,9 +55,16 @@ function Card({ hash_id, menu_active, onMenu }) {
 		}
 	];
 
+	// Handle context menu event
+	const handleContextMenu = e => {
+		e.preventDefault();
+		e.stopPropagation();
+		onMenu();
+	};
+
 	return (
 		<div className="card-container">
-			<div className={`card ${loading ? 'loading' : ''} ${error ? 'error' : ''} ${menu_active ? 'menu-active' : ''}`}>
+			<div className={`card ${loading ? 'loading' : ''} ${error ? 'error' : ''} ${menu_active ? 'menu-active' : ''}`} onContextMenu={handleContextMenu} tabIndex="0">
 				<img className="card-bg" src={bg_img_src} />
 				<div className="card-content">
 					<img className="card-template" src={template_icon_img_src} />
