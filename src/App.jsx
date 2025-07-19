@@ -12,12 +12,23 @@ import { STATES } from '../constants';
 function App() {
 	// State to manage search input
 	const [search, setSearch] = useDebounce('', 500);
+	const setSearchAndResetPage = value => {
+		setSearch(value);
+		setPage(1);
+	};
 
 	// State to manage selected counter
 	const [selected_counter, setSelectedCounter] = useState('');
+	const setSelectedCounterAndResetPage = value => {
+		setSelectedCounter(value);
+		setPage(1);
+	};
+
+	// State to manage pagination
+	const [page, setPage] = useState(1);
 
 	// Fetch list of contests from Kimple API
-	const { data: contests, loading, error } = useContestsList(selected_counter, search);
+	const { data: contests, loading, error } = useContestsList(selected_counter, search, page);
 
 	const pages_count = contests?._pagination?.pagesCount;
 	const current_page = contests?._pagination?.currentPage || 1;
@@ -42,28 +53,34 @@ function App() {
 
 					<div className="counters-search-container">
 						<div className="counters">
-							<Counter label="Tous" count={contests?.contest_counters.total_count} selected={selected_counter === ''} onClick={() => setSelectedCounter('')} />
-							<Counter label="En ligne" color="green" count={contests?.contest_counters.total_published} selected={selected_counter === STATES.STATE_PUBLISHED} onClick={() => setSelectedCounter(STATES.STATE_PUBLISHED)} />
+							<Counter label="Tous" count={contests?.contest_counters.total_count} selected={selected_counter === ''} onClick={() => setSelectedCounterAndResetPage('')} />
+							<Counter
+								label="En ligne"
+								color="green"
+								count={contests?.contest_counters.total_published}
+								selected={selected_counter === STATES.STATE_PUBLISHED}
+								onClick={() => setSelectedCounterAndResetPage(STATES.STATE_PUBLISHED)}
+							/>
 							<Counter
 								label="Débute"
 								color="yellow"
 								count={contests?.contest_counters.total_launching}
 								selected={selected_counter === STATES.STATE_LAUNCHING_PUBLICATION}
-								onClick={() => setSelectedCounter(STATES.STATE_LAUNCHING_PUBLICATION)}
+								onClick={() => setSelectedCounterAndResetPage(STATES.STATE_LAUNCHING_PUBLICATION)}
 							/>
-							<Counter label="Brouillon" color="gray" count={contests?.contest_counters.total_draft} selected={selected_counter === STATES.STATE_WAITING} onClick={() => setSelectedCounter(STATES.STATE_WAITING)} />
+							<Counter label="Brouillon" color="gray" count={contests?.contest_counters.total_draft} selected={selected_counter === STATES.STATE_WAITING} onClick={() => setSelectedCounterAndResetPage(STATES.STATE_WAITING)} />
 							<Counter
 								label="Terminé"
 								color="blue"
 								count={contests?.contest_counters.total_ended}
 								selected={selected_counter === STATES.STATE_WAITING_CLOSING}
-								onClick={() => setSelectedCounter(STATES.STATE_WAITING_CLOSING)}
+								onClick={() => setSelectedCounterAndResetPage(STATES.STATE_WAITING_CLOSING)}
 							/>
 						</div>
 
 						<div className="search">
 							<span className="icon">search</span>
-							<input type="text" placeholder="Nom d'une opération" onChange={e => setSearch(e.target.value)} />
+							<input type="text" placeholder="Nom d'une opération" onChange={e => setSearchAndResetPage(e.target.value)} />
 						</div>
 					</div>
 
@@ -74,7 +91,7 @@ function App() {
 						{!loading && !error && contests?.data.map(contest => <Card hash_id={contest.hash_id} />)}
 					</div>
 
-					{!loading && !error && contests?.data.length > 0 && <Pagination current_page={current_page} total_pages={pages_count} />}
+					{!loading && !error && contests?.data.length > 0 && <Pagination current_page={current_page} total_pages={pages_count} onPageChange={setPage} />}
 				</main>
 			</div>
 
