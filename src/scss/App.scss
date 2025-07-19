@@ -71,20 +71,21 @@ header {
 			align-items: center;
 			align-self: stretch;
 			gap: 2rem;
-			flex-wrap: wrap-reverse;
+			flex-wrap: wrap;
 			margin-bottom: -0.5rem;
 
 			.counters {
 				display: flex;
 				flex-wrap: wrap;
 				justify-content: center;
-				gap: 1rem;
+				gap: 0rem 1rem;
 			}
 
 			.search {
 				display: flex;
 				align-items: center;
 				gap: 1rem;
+				justify-self: flex-end;
 
 				input {
 					background: none;
@@ -134,4 +135,15 @@ header {
 	align-items: center;
 	border-radius: 50%;
 	cursor: pointer;
+}
+
+@media (max-width: 500px) {
+	.main-container {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+
+		main button.create-operation {
+			align-self: stretch;
+		}
+	}
 }

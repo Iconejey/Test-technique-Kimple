@@ -5,7 +5,7 @@ const Pagination = ({ current_page, total_pages, onPageChange }) => {
 		<div className="pagination">
 			<button className="pagination-btn" disabled={current_page === 1} onClick={() => onPageChange(current_page - 1)}>
 				<span className="icon">arrow_back</span>
-				Précédent
+				<span className="label">Précédent</span>
 			</button>
 
 			{Array.from({ length: total_pages }, (_, i) => {
@@ -20,7 +20,7 @@ const Pagination = ({ current_page, total_pages, onPageChange }) => {
 			})}
 
 			<button className="pagination-btn" disabled={current_page === total_pages} onClick={() => onPageChange(current_page + 1)}>
-				Suivant
+				<span className="label">Suivant</span>
 				<span className="icon">arrow_forward</span>
 			</button>
 		</div>

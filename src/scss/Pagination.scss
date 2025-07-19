@@ -40,3 +40,9 @@
 		}
 	}
 }
+
+@media (max-width: 500px) {
+	.pagination button .label {
+		display: none;
+	}
+}
