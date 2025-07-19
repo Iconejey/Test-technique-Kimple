@@ -30,8 +30,8 @@ function App() {
 	// Fetch list of contests from Kimple API
 	const { data: contests, loading, error } = useContestsList(selected_counter, search, page);
 
+	// Get the total number of pages from the API response
 	const pages_count = contests?._pagination?.pagesCount;
-	const current_page = contests?._pagination?.currentPage || 1;
 
 	return (
 		<>
@@ -91,7 +91,7 @@ function App() {
 						{!loading && !error && contests?.data.map(contest => <Card hash_id={contest.hash_id} />)}
 					</div>
 
-					{!loading && !error && contests?.data.length > 0 && <Pagination current_page={current_page} total_pages={pages_count} onPageChange={setPage} />}
+					{!loading && !error && contests?.data.length > 0 && <Pagination current_page={page} total_pages={pages_count} onPageChange={setPage} />}
 				</main>
 			</div>
 
