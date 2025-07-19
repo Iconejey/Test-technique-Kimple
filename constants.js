@@ -120,7 +120,7 @@ export const STATES = {
 };
 
 export const STATE_ICONS = {
-	[STATES.STATE_PUBLISHED]: 'rocket_launch',
+	[STATES.STATE_PUBLISHED]: 'bigtop_updates',
 	[STATES.STATE_WAITING]: 'description',
 	[STATES.STATE_FINISHED]: 'flag',
 	[STATES.STATE_WAITING_PUBLISHED]: 'flag',

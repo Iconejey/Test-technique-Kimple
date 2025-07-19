@@ -17,8 +17,6 @@ export function useFetch(url, options = {}) {
 			setLoading(true);
 			setError(null);
 
-			console.log(fetch_url, fetch_options);
-
 			// Fetching data
 			const response = await fetch(fetch_url, {
 				...fetch_options,
@@ -62,10 +60,10 @@ export function useFetch(url, options = {}) {
 
 		// Cleanup function to abort the fetch request if the component unmounts
 		return () => controller.abort();
-	}, []);
+	}, [url]);
 
 	// Function to refetch data with new URL or options
-	const refetch = (newUrl, newOptions) => fetchData(newUrl || url, newOptions || options);
+	const refetch = (newUrl, new_options) => fetchData(newUrl || url, new_options || options);
 
 	return {
 		data,
@@ -81,7 +79,7 @@ export function useKimpleAPI(endpoint, options = {}) {
 	const url = `${API_BASE_URL}${endpoint}`;
 
 	// Options to include API key and secret
-	const kimpleOptions = {
+	const kimple_options = {
 		...options,
 		headers: {
 			'Api-Key': API_KEY,
@@ -91,5 +89,23 @@ export function useKimpleAPI(endpoint, options = {}) {
 	};
 
 	// Use the useFetch hook
-	return useFetch(url, kimpleOptions);
+	return useFetch(url, kimple_options);
+}
+
+// Custom hook to fetch the list of contests
+export function useContestsList(state) {
+	// Default URL parameters
+	const url_params = { order: 'start_at desc' };
+
+	// Construct the search parameter
+	const search_params = [];
+	if (state) search_params.push(`state='${state}'`);
+	const search_query = search_params.join('&&');
+	if (search_query) url_params.search = search_query;
+
+	const query_string = new URLSearchParams(url_params).toString();
+	const endpoint = `/contests/list?${query_string}`;
+
+	// Use the useKimpleAPI hook to fetch the contests
+	return useKimpleAPI(endpoint);
 }

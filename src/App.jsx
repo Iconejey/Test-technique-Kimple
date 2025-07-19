@@ -3,19 +3,16 @@ import Sidebar from './components/Sidebar';
 import IconButton from './components/IconButton';
 import Counter from './components/Counter';
 import Card from './components/Card';
-import { useKimpleAPI } from './hooks/useFetch';
+import { useContestsList } from './hooks/useFetch';
 import { useState } from 'react';
+import { STATES } from '../constants';
 
 function App() {
-	// Fetch list of contests from Kimple API
-	const { data: contests, loading, error } = useKimpleAPI('/contests/list?order=start_at%20desc');
-
 	// State to manage selected counter
-	const [selected_counter, setSelectedCounter] = useState('all');
+	const [selected_counter, setSelectedCounter] = useState('');
 
-	// Console log the data when it's available
-	if (contests) console.log('Fetched data:', contests);
-	if (error) console.error('Error fetching data:', error);
+	// Fetch list of contests from Kimple API
+	const { data: contests, loading, error } = useContestsList(selected_counter);
 
 	return (
 		<>
@@ -37,20 +34,30 @@ function App() {
 
 					<div className="counters-search-container">
 						<div className="counters">
-							<Counter label="Tous" count={contests?.contest_counters.total_count} selected={selected_counter === 'all'} onClick={() => setSelectedCounter('all')} />
-							<Counter label="En ligne" color="green" count={contests?.contest_counters.total_published} selected={selected_counter === 'published'} onClick={() => setSelectedCounter('published')} />
-							<Counter label="Débute" color="yellow" count={contests?.contest_counters.total_launching} selected={selected_counter === 'launching'} onClick={() => setSelectedCounter('launching')} />
-							<Counter label="Brouillon" color="gray" count={contests?.contest_counters.total_draft} selected={selected_counter === 'draft'} onClick={() => setSelectedCounter('draft')} />
-							<Counter label="Terminé" color="blue" count={contests?.contest_counters.total_ended} selected={selected_counter === 'ended'} onClick={() => setSelectedCounter('ended')} />
+							<Counter label="Tous" count={contests?.contest_counters.total_count} selected={selected_counter === ''} onClick={() => setSelectedCounter('')} />
+							<Counter label="En ligne" color="green" count={contests?.contest_counters.total_published} selected={selected_counter === STATES.STATE_PUBLISHED} onClick={() => setSelectedCounter(STATES.STATE_PUBLISHED)} />
+							<Counter
+								label="Débute"
+								color="yellow"
+								count={contests?.contest_counters.total_launching}
+								selected={selected_counter === STATES.STATE_LAUNCHING_PUBLICATION}
+								onClick={() => setSelectedCounter(STATES.STATE_LAUNCHING_PUBLICATION)}
+							/>
+							<Counter label="Brouillon" color="gray" count={contests?.contest_counters.total_draft} selected={selected_counter === STATES.STATE_WAITING} onClick={() => setSelectedCounter(STATES.STATE_WAITING)} />
+							<Counter
+								label="Terminé"
+								color="blue"
+								count={contests?.contest_counters.total_ended}
+								selected={selected_counter === STATES.STATE_WAITING_CLOSING}
+								onClick={() => setSelectedCounter(STATES.STATE_WAITING_CLOSING)}
+							/>
 						</div>
 					</div>
 
 					<div className="cards">
 						{loading && !error && <p>Chargement des opérations...</p>}
 						{error && <p className="contests-api-error">Erreur lors du chargement des opérations.</p>}
-						{contests?.data.map(contest => (
-							<Card hash_id={contest.hash_id} />
-						))}
+						{!loading && !error && contests?.data.map(contest => <Card hash_id={contest.hash_id} />)}
 					</div>
 				</main>
 			</div>
