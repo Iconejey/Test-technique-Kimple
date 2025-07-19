@@ -10,6 +10,9 @@ import { useState } from 'react';
 import { STATES } from '../constants';
 
 function App() {
+	// State to manage sidebar visibility
+	const [is_sidebar_hidden, setSidebarHidden] = useState(false);
+
 	// State to manage search input
 	const [search, setSearch] = useDebounce('', 500);
 	const setSearchAndResetPage = value => {
@@ -43,9 +46,13 @@ function App() {
 
 	return (
 		<>
-			<Sidebar />
+			<Sidebar is_hidden={is_sidebar_hidden} onClose={() => setSidebarHidden(true)} />
 
 			<header>
+				<button className="sidebar-toggle" onClick={() => setSidebarHidden(false)} title="Ouvrir le menu">
+					menu
+				</button>
+
 				<div className="profile">CJ</div>
 			</header>
 

@@ -2,11 +2,7 @@ import { useState } from 'react';
 import '../scss/Sidebar.scss';
 import IconButton from './IconButton';
 
-const Sidebar = () => {
-	// State to manage sidebar visibility
-	const [is_hidden, setIsHidden] = useState(false);
-	const toggleSidebar = () => setIsHidden(!is_hidden);
-
+const Sidebar = ({ is_hidden, onClose }) => {
 	// State to manage selected view
 	const [selected_view, setSelectedView] = useState('operations');
 
@@ -15,12 +11,8 @@ const Sidebar = () => {
 			<div className="sidebar-header">
 				<img src="/kimple.png" alt="Kimple" />
 
-				<button className="close-sidebar sidebar-btn" onClick={toggleSidebar} title="Fermer le menu">
+				<button className="close-sidebar sidebar-btn" onClick={onClose} title="Fermer le menu">
 					menu_open
-				</button>
-
-				<button className="open-sidebar sidebar-btn" onClick={toggleSidebar} title="Ouvrir le menu">
-					menu
 				</button>
 			</div>
 

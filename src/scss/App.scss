@@ -6,11 +6,25 @@ header {
 	background-color: var(--white-1);
 	box-shadow: var(--shadow-light);
 	padding-right: 2rem;
+	padding-left: 1rem;
 	height: var(--header-height);
 	display: flex;
-	justify-content: flex-end;
+	justify-content: space-between;
 	align-items: center;
 	z-index: 1;
+
+	.sidebar-toggle {
+		display: flex;
+		font-size: 1.2rem;
+		font-family: 'Material Symbols Outlined';
+		transition: opacity 0.2s ease;
+		color: var(--accent-dark);
+		opacity: 1;
+
+		&:not(:hover) {
+			opacity: 0.3;
+		}
+	}
 
 	.profile {
 		width: calc(var(--header-height) * 0.6);
