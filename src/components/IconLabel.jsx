@@ -6,7 +6,8 @@ function IconLabel({ icon, label, color }) {
 
 	return (
 		<div className={`icon-label ${color ? 'colored' : ''}`} style={styles}>
-			<span className="icon">{icon}</span>
+			{icon === 'language' && <span className="language-icon" style={{ backgroundImage: `url(/flags/${label}.svg)` }}></span>}
+			{icon !== 'language' && <span className="icon">{icon}</span>}
 			<span>{label}</span>
 		</div>
 	);
