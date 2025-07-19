@@ -1,0 +1,45 @@
+.pagination {
+	display: flex;
+	align-items: center;
+	gap: 0.2rem;
+
+	button {
+		padding: 0.6rem 0.8rem;
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+		border: none;
+		border-radius: 0.25rem;
+		background: none;
+		cursor: pointer;
+		color: var(--accent-dark);
+
+		&:disabled {
+			cursor: not-allowed;
+			opacity: 0.5;
+			background: var(--lighter-gray);
+			color: var(--gray);
+		}
+
+		.icon {
+			font-size: 1.2rem;
+		}
+
+		&.page {
+			font-size: 1.1rem;
+
+			&.active {
+				outline: 1px solid var(--accent);
+				outline-offset: -1px;
+				background-color: var(--accent-light);
+			}
+		}
+
+		&:hover,
+		&:focus {
+			&:not(:disabled, .active) {
+				background-color: var(--lighter-gray);
+			}
+		}
+	}
+}

@@ -3,6 +3,7 @@ import Sidebar from './components/Sidebar';
 import IconButton from './components/IconButton';
 import Counter from './components/Counter';
 import Card from './components/Card';
+import Pagination from './components/Pagination';
 import { useContestsList } from './hooks/useFetch';
 import { useDebounce } from './hooks/useDebounce';
 import { useState } from 'react';
@@ -17,6 +18,9 @@ function App() {
 
 	// Fetch list of contests from Kimple API
 	const { data: contests, loading, error } = useContestsList(selected_counter, search);
+
+	const pages_count = contests?._pagination?.pagesCount;
+	const current_page = contests?._pagination?.currentPage || 1;
 
 	return (
 		<>
@@ -64,11 +68,13 @@ function App() {
 					</div>
 
 					<div className="cards">
-						{loading && !error && <p>Chargement des opérations...</p>}
 						{error && <p className="contests-api-error">Erreur lors du chargement des opérations.</p>}
-						{!loading && !error && contests?.data.map(contest => <Card hash_id={contest.hash_id} />)}
+						{loading && !error && <p>Chargement des opérations...</p>}
 						{!loading && !error && contests?.data.length === 0 && <p>Aucune opération trouvée.</p>}
+						{!loading && !error && contests?.data.map(contest => <Card hash_id={contest.hash_id} />)}
 					</div>
+
+					{!loading && !error && contests?.data.length > 0 && <Pagination current_page={current_page} total_pages={pages_count} />}
 				</main>
 			</div>
 
