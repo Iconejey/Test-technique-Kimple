@@ -73,7 +73,7 @@ This doc will guide you through the setup to run the project locally, but you ca
     npm run express
     ```
 
-    The application will be served at `http://localhost:8020`
+    The application will be served at http://localhost:8020.
 
 4. **Using PM2 (optional)** :
 
