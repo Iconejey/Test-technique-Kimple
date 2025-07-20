@@ -2,7 +2,7 @@
 
 This doc will guide you through the setup to run the project locally, but you can also view the live demo at [kimple.nosuite.fr](https://kimple.nosuite.fr).
 
-> [!WARNING]  
+> [!IMPORTANT]  
 > Sometimes the API will return an error when you try to access the application. Just refresh the page, it should work.
 
 ## 🛠️ Technology Stack
