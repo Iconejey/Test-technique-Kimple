@@ -5,6 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"express": "node server.js",
+		"pm2": "pm2 start server.js --name kimple",
 		"dev": "vite",
 		"build": "vite build",
 		"lint": "eslint .",
