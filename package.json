@@ -11,8 +11,7 @@
 		"lint": "eslint .",
 		"preview": "vite preview",
 		"scss": "sass src/scss:src/css --no-source-map",
-		"scss:watch": "sass --watch src/scss:src/css --no-source-map",
-		"scss:compressed": "sass src/scss:src/css --style=compressed --no-source-map"
+		"scss:watch": "sass --watch src/scss:src/css --no-source-map"
 	},
 	"dependencies": {
 		"express": "^5.1.0",
