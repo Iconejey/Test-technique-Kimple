@@ -36,7 +36,7 @@ This doc will guide you through the setup to run the project locally, but you ca
     npm run scss:watch
     ```
 
-1. **Start the development server (vite)** :
+2. **Start the development server (vite)** :
 
     ```bash
     npm run dev
@@ -46,7 +46,17 @@ This doc will guide you through the setup to run the project locally, but you ca
 
 ### Production Deployment
 
-1. **Build for production** :
+1. **Compile SCSS** :
+
+    ```bash
+    # One-time compilation
+    npm run scss
+
+    # Watch mode for automatic compilation
+    npm run scss:watch
+    ```
+
+2. **Build for production** :
 
     ```bash
     npm run build
@@ -54,7 +64,7 @@ This doc will guide you through the setup to run the project locally, but you ca
 
     This creates a `dist/` directory with optimized production files.
 
-2. **Start the production server** :
+3. **Start the production server** :
 
     ```bash
     npm run express
@@ -62,13 +72,13 @@ This doc will guide you through the setup to run the project locally, but you ca
 
     The application will be served at `http://localhost:8020`
 
-3. **Using PM2 (optional)** :
+4. **Using PM2 (optional)** :
+
+    Close the express server if it is running, then you can use PM2 to manage the process:
 
     ```bash
     npm run pm2
     ```
-
-    This starts the server with PM2 process management.
 
 ## Development choices
 
