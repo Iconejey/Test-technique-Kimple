@@ -89,6 +89,12 @@ This doc will guide you through the setup to run the project locally, but you ca
 
 I know that React 19 has some breaking changes compared to React 18, so I'm aware that some companies may not have migrated their codebase yet. You told me that Kimple was workin on a V2 of their product, so I guess it was also a good opportunity to use the latest version of React.
 
+### Comments
+
+I always put comments, a lot, so that I can read them instead of the code when I come back to it later.
+
+For a professionnal project, I thought about using [JSDoc](https://jsdoc.app/) to document the code, but during our interview you told me that you used something (when we talked about TypeScript and typed languages) which I didn't remember the name of, so I'm impatient to see what it is.
+
 ### SCSS
 
 The test requires the use of a CSS framework, but I chose to use the SCSS preprocessor instead of a framework like Bootstrap or Tailwind. I'm used to this approach, even though it's mainly for the ability to use nesting.
