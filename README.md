@@ -29,16 +29,6 @@ This doc will guide you through the setup to run the project locally, but you ca
 
 ### Development
 
-1. **Compile SCSS** :
-
-    ```bash
-    # One-time compilation
-    npm run scss
-
-    # Watch mode for automatic compilation
-    npm run scss:watch
-    ```
-
 2. **Start the development server (vite)** :
 
     ```bash
@@ -48,16 +38,6 @@ This doc will guide you through the setup to run the project locally, but you ca
     The application will be available at http://localhost:5173.
 
 ### Production Deployment
-
-1. **Compile SCSS** :
-
-    ```bash
-    # One-time compilation
-    npm run scss
-
-    # Watch mode for automatic compilation
-    npm run scss:watch
-    ```
 
 2. **Build for production** :
 

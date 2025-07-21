@@ -1,4 +1,4 @@
-import './css/App.css';
+import './scss/App.scss';
 import Sidebar from './components/Sidebar';
 import IconButton from './components/IconButton';
 import Counter from './components/Counter';

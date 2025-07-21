@@ -1,4 +1,4 @@
-import '../css/IconButton.css';
+import '../scss/IconButton.scss';
 
 function IconButton({ icon, label, onClick, className = '', selected }) {
 	return (

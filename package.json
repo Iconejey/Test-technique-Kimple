@@ -9,9 +9,7 @@
 		"dev": "vite",
 		"build": "vite build",
 		"lint": "eslint .",
-		"preview": "vite preview",
-		"scss": "sass src/scss:src/css --no-source-map",
-		"scss:watch": "sass --watch src/scss:src/css --no-source-map"
+		"preview": "vite preview"
 	},
 	"dependencies": {
 		"express": "^5.1.0",
