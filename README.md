@@ -79,7 +79,7 @@ For a professionnal project, I thought about using [JSDoc](https://jsdoc.app/) t
 
 The test requires the use of a CSS framework, but I chose to use the SCSS preprocessor instead of a framework like Bootstrap or Tailwind. I'm used to this approach, even though it's mainly for the ability to use nesting.
 
-I still use native CSS variables, for SCSS ones, and nesting has been integrated to native CSS so you may wonder why I didn't just use native CSS. The reason is that I wanted to keep the ability to use SCSS functions and loops like `@for`, even though I didn't have a specific use case for them in this project.
+I still use native CSS variables, not SCSS ones, and nesting has been integrated to native CSS so you may wonder why I didn't just use native CSS. The reason is that I wanted to keep the ability to use SCSS functions and loops like `@for`, even though I didn't have a specific use case for them in this project.
 
 ### No libraries
 
@@ -97,4 +97,4 @@ Of course, using libraries allows for faster development with code that has been
 
 ### Express server
 
-The express server is only for me to serve the production build on my VPS server. It is in no way part of the test since it does not inclue backend.
+The express server is only for me to serve the production build on my VPS server. It is in no way part of the test since no backend is required.
