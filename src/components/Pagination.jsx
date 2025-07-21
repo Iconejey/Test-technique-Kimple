@@ -1,6 +1,12 @@
 import '../scss/Pagination.scss';
 
 const Pagination = ({ current_page, total_pages, onPageChange }) => {
+	// List from three pages back to three pages forward
+	const button_pages = [];
+	for (let i = current_page - 3; i <= current_page + 3; i++) {
+		if (i > 0 && i <= total_pages) button_pages.push(i);
+	}
+
 	return (
 		<div className="pagination">
 			<button className="pagination-btn" disabled={current_page === 1} onClick={() => onPageChange(current_page - 1)}>
@@ -8,8 +14,7 @@ const Pagination = ({ current_page, total_pages, onPageChange }) => {
 				<span className="label">Précédent</span>
 			</button>
 
-			{Array.from({ length: total_pages }, (_, i) => {
-				const page = i + 1;
+			{button_pages.map(page => {
 				const is_active = current_page === page;
 
 				return (
