@@ -18,7 +18,7 @@ const Pagination = ({ current_page, total_pages, onPageChange }) => {
 				const is_active = current_page === page;
 
 				return (
-					<button className={`pagination-btn page ${is_active ? 'active' : ''}`} onClick={() => onPageChange(page)}>
+					<button key={page} className={`pagination-btn page ${is_active ? 'active' : ''}`} onClick={() => onPageChange(page)}>
 						{page}
 					</button>
 				);

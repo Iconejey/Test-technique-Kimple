@@ -103,7 +103,7 @@ function App() {
 						{error && <p className="contests-api-error">Erreur lors du chargement des opérations.</p>}
 						{loading && !error && <p>Chargement des opérations...</p>}
 						{!loading && !error && contests?.data.length === 0 && <p>Aucune opération trouvée.</p>}
-						{!loading && !error && contests?.data.map(contest => <Card hash_id={contest.hash_id} menu_active={contest.hash_id === active_menu} onMenu={() => setActiveMenu(contest.hash_id)} />)}
+						{!loading && !error && contests?.data.map(contest => <Card key={contest.hash_id} hash_id={contest.hash_id} menu_active={contest.hash_id === active_menu} onMenu={() => setActiveMenu(contest.hash_id)} />)}
 					</div>
 
 					{!loading && !error && contests?.data.length > 0 && <Pagination current_page={page} total_pages={pages_count} onPageChange={setPage} />}
