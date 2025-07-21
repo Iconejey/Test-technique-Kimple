@@ -9,7 +9,7 @@ This doc will guide you through the setup to run the project locally, but you ca
 
 -   **Frontend Framework** : React 19.1.0
 -   **Build Tool** : Vite 7.0.4
--   **Styling** : SCSS with CSS compilation
+-   **Styling** : SCSS preprocessor
 -   **Server** : Express.js for production serving
 -   **Process Management** : PM2 (optional)
 
